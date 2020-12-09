@@ -1,0 +1,9 @@
+Debug/
+bin/
+obj/
+plan/
+objectiveAdressBook.vcxproj.*
+objectiveAdressBook.sln
+objectiveAdressBook.vcxproj
+.vs/
+Uzytkownicy.txt
