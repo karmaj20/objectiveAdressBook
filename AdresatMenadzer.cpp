@@ -84,5 +84,5 @@ void AdresatMenadzer::wyswietlWszystkichAdresatow()
 
 void AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
-    plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci);
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 }

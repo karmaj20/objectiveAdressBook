@@ -9,6 +9,8 @@
 
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
+#include "UzytkownikMenadzer.h"
+
 using namespace std;
 
 class AdresatMenadzer {

@@ -65,9 +65,9 @@ int UzytkownikMenadzer::logowanieUzytkownika()
                 if (itr->pobierzHaslo() == haslo)
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
-                    system("pause");
                     idZalogowanegoUzytkownika = itr->pobierzId();
-                    return idZalogowanegoUzytkownika;
+                    system("pause");
+                    return 1;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
