@@ -56,7 +56,7 @@ int AdresatMenadzer::dodajAdresata()
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
-    cout << endl << "Adresat dodany pomyslnie" << endl;
+    cout << endl << "Adresat dodany pomyslnie" << endl; 
     system("pause");
 
     return ++idOstatniegoAdresata;
@@ -82,7 +82,9 @@ void AdresatMenadzer::wyswietlWszystkichAdresatow()
     system("pause");
 }
 
+/*
 void AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
 {
     adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 }
+*/

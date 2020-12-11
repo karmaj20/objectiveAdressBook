@@ -65,9 +65,9 @@ int UzytkownikMenadzer::logowanieUzytkownika()
                 if (itr->pobierzHaslo() == haslo)
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
-                    idZalogowanegoUzytkownika = itr->pobierzId();
                     system("pause");
-                    return 1;
+                    idZalogowanegoUzytkownika = itr->pobierzId();                 
+                    return idZalogowanegoUzytkownika;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -81,9 +81,28 @@ int UzytkownikMenadzer::logowanieUzytkownika()
     return 0;
 }
 
-void UzytkownikMenadzer::rejestracjaUzytkownika() {
-    Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
+void UzytkownikMenadzer::wylogujUzytkownika()
+{
+    idZalogowanegoUzytkownika = 0;
+}
 
+bool UzytkownikMenadzer::czyUzytkownikJestZalogowany() 
+{
+    if (idZalogowanegoUzytkownika > 0) {
+        return true;
+    }
+    else
+        return false;
+}
+
+int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}
+
+void UzytkownikMenadzer::rejestracjaUzytkownika() {
+
+    Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
     uzytkownicy.push_back(uzytkownik);
     plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
 
@@ -118,10 +137,12 @@ void UzytkownikMenadzer::wypiszWszystkichUzytkownikow()
     }
 }
 
+/*
 void UzytkownikMenadzer::wczytajUzytkownikowZPliku()
 {
     uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
+*/
 
 void UzytkownikMenadzer::zapiszWszystkichUzytkownikowDoPliku()
 {

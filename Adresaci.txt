@@ -1,3 +1,15 @@
+<<<<<<< HEAD
 1|0|pawel|ma|a|sa|sa|
 1|0|osk|sa|sa|sa|sa|
 1|0|231|321|321|321|231|
+
+=======
+1|1|karol|majchrzak|73199|kmajchrzak|reda|
+2|1|szkolna|ka|s|a|sa|
+3|1|karol|as|sa|sa|sa|
+4|1|sa|sa|sa|sa|a|
+1|2|Robert|Maklowicz|919129|robmak@o2.pl|caly|
+2|2|swiat|Karol|Okrasa|karokr@gmail.com|Warszawa|
+5|1|p|p|p|p|p|
+6|1|p|p|p|p|p|
+>>>>>>> feature__working-with-id-user

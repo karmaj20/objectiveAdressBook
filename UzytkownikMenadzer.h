@@ -21,8 +21,14 @@ class UzytkownikMenadzer {
 	PlikZUzytkownikami plikZUzytkownikami;
 
 public:
-	UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
+	UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
+		idZalogowanegoUzytkownika = 0;
+		uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+	};
 	int logowanieUzytkownika();
+	void wylogujUzytkownika();
+	bool czyUzytkownikJestZalogowany();
+	int pobierzIdZalogowanegoUzytkownika();
 	void rejestracjaUzytkownika();
 	void zmianaHaslaZalogowanegoUzytkownika();
 	void wypiszWszystkichUzytkownikow();

@@ -71,7 +71,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
         }
         else
         {
-            plikTekstowy << liniaZDanymiUzytkownika;
+            plikTekstowy << liniaZDanymiUzytkownika << endl;
         }
     }
     else
@@ -125,11 +125,11 @@ void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>
                 plikTekstowy << liniaZDanymiUzytkownika << endl;
             }
             liniaZDanymiUzytkownika = "";
+            plikTekstowy.close();
         }
     }
     else
     {
         cout << "Nie mozna otworzyc pliku " << nazwaPlikuZUzytkownikami << endl;
     }
-    plikTekstowy.close();
 }

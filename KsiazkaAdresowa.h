@@ -9,14 +9,23 @@ using namespace std;
 
 class KsiazkaAdresowa {
 	UzytkownikMenadzer uzytkownikMenadzer;
-	AdresatMenadzer adresatMenadzer;
+	AdresatMenadzer* adresatMenadzer;
+	const string nazwaPlikuZAdresatami;
 public:
+	/*
 	KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami)
 		: uzytkownikMenadzer(nazwaPlikuZUzytkownikami), adresatMenadzer(nazwaPlikuZAdresatami) {
 		uzytkownikMenadzer.wczytajUzytkownikowZPliku();
 		adresatMenadzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
 	};
+	*/
+	KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string NAZWAPLIKUZADRESATAMI) :
+		uzytkownikMenadzer(nazwaPlikuZUzytkownikami), nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI) { };
+	~KsiazkaAdresowa() {
+		delete adresatMenadzer;
+	}
 
+	void czyUzytkownikJestZalogowany();
 	void rejestracjaUzytkownika();
 	void logowanieUzytkownika();
 	void zmianaHaslaZalogowanegoUzytkownika();
