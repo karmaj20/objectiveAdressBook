@@ -5,37 +5,30 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata()
     Adresat adresat;
     string imie, nazwisko, numerTelefonu, email, adres;
     adresat.ustawId(pobierzIdOstatniegoAdresata());
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
-    cin >> imie;
-    adresat.ustawImie(imie);
+    imie = MetodyPomocnicze::wczytajLinie();
 
     cout << "Podaj nazwisko: ";
-    cin >> nazwisko;
-    adresat.ustawNazwisko(nazwisko);
+    nazwisko = MetodyPomocnicze::wczytajLinie();
 
     cout << "Podaj numer telefonu: ";
-    cin >> numerTelefonu;
-    adresat.ustawNumerTelefonu(numerTelefonu);
+    numerTelefonu = MetodyPomocnicze::wczytajLinie();
 
     cout << "Podaj email: ";
-    cin >> email;
-    adresat.ustawEmail(email);
+    email = MetodyPomocnicze::wczytajLinie();
 
     cout << "Podaj adres: ";
-    cin >> adres;
+    adres = MetodyPomocnicze::wczytajLinie();
+
+    adresat.ustawImie(imie);
+    adresat.ustawNazwisko(nazwisko);
+    adresat.ustawNumerTelefonu(numerTelefonu);
+    adresat.ustawEmail(email);
     adresat.ustawAdres(adres);
 
     return adresat;
-}
-
-int AdresatMenadzer::pobierzIdOstatniegoAdresata()
-{
-    if (adresaci.empty() == true)
-        return 1;
-    else
-        return adresaci.back().pobierzId() + 1;
 }
 
 void AdresatMenadzer::wyswietlDaneAdresata(Adresat adresat)
@@ -49,7 +42,7 @@ void AdresatMenadzer::wyswietlDaneAdresata(Adresat adresat)
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
 }
 
-int AdresatMenadzer::dodajAdresata()
+void AdresatMenadzer::dodajAdresata()
 {
     Adresat adresat = podajDaneNowegoAdresata();
 
@@ -59,7 +52,6 @@ int AdresatMenadzer::dodajAdresata()
     cout << endl << "Adresat dodany pomyslnie" << endl; 
     system("pause");
 
-    return ++idOstatniegoAdresata;
 }
 
 void AdresatMenadzer::wyswietlWszystkichAdresatow()
@@ -82,9 +74,10 @@ void AdresatMenadzer::wyswietlWszystkichAdresatow()
     system("pause");
 }
 
-/*
-void AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+int AdresatMenadzer::pobierzIdOstatniegoAdresata()
 {
-    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+    if (adresaci.empty() == true)
+        return 1;
+    else
+        return adresaci.back().pobierzId() + 1;
 }
-*/

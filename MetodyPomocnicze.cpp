@@ -16,3 +16,46 @@ int MetodyPomocnicze::konwersjaStringNaInt(string liczba)
 
     return liczbaInt;
 }
+
+string MetodyPomocnicze::wczytajLinie()
+{
+    string wejscie = "";
+    getline(cin>>ws, wejscie);
+    return wejscie;
+}
+
+char MetodyPomocnicze::wczytajZnak()
+{
+    string wejscie = "";
+    char znak = { 0 };
+
+    while (true)
+    {
+        getline(cin>>ws, wejscie);
+
+        if (wejscie.length() == 1)
+        {
+            znak = wejscie[0];
+            break;
+        }
+        cout << "To nie jest pojedynczy znak. Wpisz ponownie." << endl;
+    }
+    return znak;
+}
+
+int MetodyPomocnicze::wczytajLiczbeCalkowita()
+{
+    string wejscie = "";
+    int liczba = 0;
+
+    while (true)
+    {
+        getline(cin>>ws, wejscie);
+
+        stringstream myStream(wejscie);
+        if (myStream >> liczba)
+            break;
+        cout << "To nie jest liczba. Wpisz ponownie." << endl;
+    }
+    return liczba;
+}

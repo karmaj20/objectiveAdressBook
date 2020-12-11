@@ -13,3 +13,8 @@
 5|1|p|p|p|p|p|
 6|1|p|p|p|p|p|
 >>>>>>> feature__working-with-id-user
+7|1|nowy|adresat|bez|id|ostatniego|
+3|2|nowy|adresat|macka|s|juz|
+8|1|ads|dsa|dsa|dsa|sd|
+9|1|||sda|s|asd|
+10|1|karol|majchr|d saa|d sa |dsa dsa |

@@ -137,13 +137,6 @@ void UzytkownikMenadzer::wypiszWszystkichUzytkownikow()
     }
 }
 
-/*
-void UzytkownikMenadzer::wczytajUzytkownikowZPliku()
-{
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-*/
-
 void UzytkownikMenadzer::zapiszWszystkichUzytkownikowDoPliku()
 {
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
