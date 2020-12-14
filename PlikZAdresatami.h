@@ -6,24 +6,39 @@
 #include <cstdlib>
 
 #include "Adresat.h"
+#include "PlikTekstowy.h"
 #include "MetodyPomocnicze.h"
 
 using namespace std;
 
-class PlikZAdresatami {
+class PlikZAdresatami: public PlikTekstowy {
 	const string NAZWA_PLIKU_Z_ADRESATAMI;
 	int idOstatniegoAdresata;
+	const string nazwaTymczasowegoPlikuZAdresatami;
 
-	bool czyPlikJestPusty();
 	string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
 	int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 	int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
 	string pobierzLiczbe(string tekst, int pozycjaZnaku);
 	Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
+
+	void usunPlik(string nazwaPlikuZRozszerzeniem);
+	void zmienNazwePliku(string staraNazwa, string nowaNazwa);
+	int pobierzZPlikuIdOstatniegoAdresata();
+	int podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(int idUsuwanegoAdresata, int idOstatniegoAdresata);
+	int podajIdWybranegoAdresata();
+	void usunWybranegoAdresataZPliku(int numerUsuwanejLinii);
+	void edytujWybranaLinieWPliku(int numerLiniiEdytowanegoAdresata, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
 public:
-	PlikZAdresatami(string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami) {};
-	bool dopiszAdresataDoPliku(Adresat adresat);
+	PlikZAdresatami(string nazwaPliku) :
+		PlikTekstowy(nazwaPliku), nazwaTymczasowegoPlikuZAdresatami("Adresaci_tymczasowo.txt") 
+	{
+		idOstatniegoAdresata = 0;
+	};
+	void dopiszAdresataDoPliku(Adresat adresat);
 	vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+	int usunAdresata(vector <Adresat>& adresaci);
+	void zaktualizujDaneWybranegoAdresata(Adresat adresat);
 };
 
 #endif

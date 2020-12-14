@@ -19,8 +19,11 @@ class AdresatMenadzer {
 
 	Adresat podajDaneNowegoAdresata();
 	int pobierzIdOstatniegoAdresata();
+	int podajIdWybranegoAdresata();
 	void wyswietlDaneAdresata(Adresat adresat);
+	void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 	PlikZAdresatami plikZAdresatami;
+	char wybierzOpcjeZMenuEdycja();
 public:
 	/*AdresatMenadzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};*/
 	AdresatMenadzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) :
@@ -31,6 +34,10 @@ public:
 
 	void dodajAdresata();
 	void wyswietlWszystkichAdresatow();
+	void wyszukajAdresatowPoImieniu();
+	void wyszukajAdresatowPoNazwisku();
+	void usunAdresata();
+	void edytujAdresata();
 };
 
 #endif

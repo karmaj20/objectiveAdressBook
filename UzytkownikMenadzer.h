@@ -33,6 +33,9 @@ public:
 	void zmianaHaslaZalogowanegoUzytkownika();
 	void wypiszWszystkichUzytkownikow();
 	void zapiszWszystkichUzytkownikowDoPliku();
+
+	char wybierzOpcjeZMenuGlownego();
+	char wybierzOpcjeZMenuUzytkownika();
 };
 
 #endif

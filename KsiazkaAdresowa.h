@@ -12,13 +12,6 @@ class KsiazkaAdresowa {
 	AdresatMenadzer* adresatMenadzer;
 	const string NAZWA_PLIKU_Z_ADRESATAMI;
 public:
-	/*
-	KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami)
-		: uzytkownikMenadzer(nazwaPlikuZUzytkownikami), adresatMenadzer(nazwaPlikuZAdresatami) {
-		uzytkownikMenadzer.wczytajUzytkownikowZPliku();
-		adresatMenadzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-	};
-	*/
 	KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) :
 		uzytkownikMenadzer(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
 	 {
@@ -29,14 +22,25 @@ public:
 		adresatMenadzer = NULL;
 	}
 
-	void czyUzytkownikJestZalogowany();
+	char wybierzOpcjeZMenuGlownego();
+	char wybierzOpcjeZMenuUzytkownika();
+	bool czyUzytkownikJestZalogowany();
+
+	void wypiszWszystkichUzytkownikow();
+
+	// MENU GLOWNE
 	void rejestracjaUzytkownika();
 	void logowanieUzytkownika();
 	void wylogowanieUzytkownika();
-	void zmianaHaslaZalogowanegoUzytkownika();
-	void wypiszWszystkichUzytkownikow();
-	void wypiszWszystkichAdresatow();
+
+	// MENU UZYTKOWNIKA
 	void dodajAdresata();
+	void wyszukajAdresatowPoImieniu();
+	void wyszukajAdresatowPoNazwisku();
+	void wypiszWszystkichAdresatow();
+	void usunAdresata();
+	void edytujAdresata();
+	void zmianaHaslaZalogowanegoUzytkownika();
 };
 
 #endif
