@@ -22,6 +22,7 @@ class PlikZAdresatami: public PlikTekstowy {
 	string pobierzLiczbe(string tekst, int pozycjaZnaku);
 	Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
 
+	void ustawIdOstatniegoAdresata(int noweIdOstatniegoAdresata);
 	void usunPlik(string nazwaPlikuZRozszerzeniem);
 	void zmienNazwePliku(string staraNazwa, string nowaNazwa);
 	int pobierzZPlikuIdOstatniegoAdresata();
@@ -33,12 +34,13 @@ public:
 	PlikZAdresatami(string nazwaPliku) :
 		PlikTekstowy(nazwaPliku), nazwaTymczasowegoPlikuZAdresatami("Adresaci_tymczasowo.txt") 
 	{
-		idOstatniegoAdresata = 0;
+		idOstatniegoAdresata = pobierzIdOstatniegoAdresata();
 	};
-	void dopiszAdresataDoPliku(Adresat adresat);
+	int dopiszAdresataDoPliku(Adresat adresat);
 	vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
 	int usunAdresata(vector <Adresat>& adresaci);
 	void zaktualizujDaneWybranegoAdresata(Adresat adresat);
+	int pobierzIdOstatniegoAdresata();
 };
 
 #endif

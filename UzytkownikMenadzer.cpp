@@ -43,6 +43,7 @@ bool UzytkownikMenadzer::czyIstniejeLogin(string login)
     return false;
 }
 
+
 int UzytkownikMenadzer::logowanieUzytkownika()
 {
     Uzytkownik uzytkownik;

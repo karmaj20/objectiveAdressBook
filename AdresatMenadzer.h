@@ -18,7 +18,6 @@ class AdresatMenadzer {
 	vector <Adresat> adresaci;
 
 	Adresat podajDaneNowegoAdresata();
-	int pobierzIdOstatniegoAdresata();
 	int podajIdWybranegoAdresata();
 	void wyswietlDaneAdresata(Adresat adresat);
 	void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);

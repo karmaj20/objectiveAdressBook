@@ -4,7 +4,7 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata()
 {
     Adresat adresat;
     string imie, nazwisko, numerTelefonu, email, adres;
-    adresat.ustawId(pobierzIdOstatniegoAdresata());
+    adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata() + 1);
     adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
@@ -235,14 +235,6 @@ void AdresatMenadzer::edytujAdresata()
         cout << endl << "Nie ma takiego adresata." << endl << endl;
     }
     system("pause");
-}
-
-int AdresatMenadzer::pobierzIdOstatniegoAdresata()
-{
-    if (adresaci.empty() == true)
-        return 1;
-    else
-        return adresaci.back().pobierzId() + 1;
 }
 
 int AdresatMenadzer::podajIdWybranegoAdresata()

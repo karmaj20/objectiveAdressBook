@@ -7,14 +7,14 @@ string PlikTekstowy::pobierzNazwePliku()
 
 bool PlikTekstowy::czyPlikJestPusty()
 {
-    bool pusty = true;
+    bool pusty = false;
     fstream plikTekstowy;
     plikTekstowy.open(pobierzNazwePliku().c_str(), ios::app);
 
     if (plikTekstowy.good() == true) {
         plikTekstowy.seekg(0, ios::end);
         if (plikTekstowy.tellg() == 0)
-            pusty = false;
+            pusty = true;
     }
     
     plikTekstowy.close();
