@@ -199,7 +199,7 @@ void PlikZAdresatami::edytujWybranaLinieWPliku(int numerLiniiEdytowanegoAdresata
     bool czyIstniejeAdresat = false;
 
     odczytywanyPlikTekstowy.open(pobierzNazwePliku().c_str(), ios::in);
-    tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
+    tymczasowyPlikTekstowy.open(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI.c_str(), ios::out | ios::app);
 
     if (odczytywanyPlikTekstowy.good() == true)
     {
@@ -225,7 +225,7 @@ void PlikZAdresatami::edytujWybranaLinieWPliku(int numerLiniiEdytowanegoAdresata
         tymczasowyPlikTekstowy.close();
 
         usunPlik(pobierzNazwePliku());
-        zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, pobierzNazwePliku());
+        zmienNazwePliku(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI, pobierzNazwePliku());
     }
 }
 
@@ -292,7 +292,7 @@ void PlikZAdresatami::usunWybranegoAdresataZPliku(int numerUsuwanejLinii)
     int numerWczytanejLinii = 1;
 
     odczytywanyPlikTekstowy.open(pobierzNazwePliku().c_str(), ios::in);
-    tymczasowyPlikTekstowy.open(nazwaTymczasowegoPlikuZAdresatami.c_str(), ios::out | ios::app);
+    tymczasowyPlikTekstowy.open(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI.c_str(), ios::out | ios::app);
 
     if (odczytywanyPlikTekstowy.good() == true && numerUsuwanejLinii != 0)
     {
@@ -316,7 +316,7 @@ void PlikZAdresatami::usunWybranegoAdresataZPliku(int numerUsuwanejLinii)
         tymczasowyPlikTekstowy.close();
 
         usunPlik(pobierzNazwePliku());
-        zmienNazwePliku(nazwaTymczasowegoPlikuZAdresatami, pobierzNazwePliku());
+        zmienNazwePliku(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI, pobierzNazwePliku());
     }
 }
 
