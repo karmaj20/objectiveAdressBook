@@ -6,7 +6,7 @@ The user is welcomed by the main menu. In menu user can select 2 options:
 - registration
 - login
 
-[![Registration menu](/imgReadme/mainMenuAddressBook.png/)]
+![Registration menu](/imgReadme/mainMenuAddressBook.png/)
 
 If user selects registration, the data are saved to a text file and are stored there. During a registration program checs for a user with the same login on file so that each user is autonomous. Login takes user to the user menu which displays the following options :
 
@@ -19,7 +19,7 @@ If user selects registration, the data are saved to a text file and are stored t
 7. This option allows user to change the password 
 8. Loggin out to the main menu
 
-[![User menu](/imgReadme/userMenuAddressBook.png/)]
+![User menu](/imgReadme/userMenuAddressBook.png/)
 
 Tools used :
 - C++ language
