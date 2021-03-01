@@ -27,3 +27,7 @@ Tools used :
 - Text files --> fstream, sstream libraries
 - Inheritance
 - Object-oriented programming, SOLID, DRY
+
+I prefer to design the program first and next to write it.
+
+![User menu](/imgReadme/UMLAddressBook.png/)
